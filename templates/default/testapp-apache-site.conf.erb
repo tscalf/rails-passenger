@@ -1,0 +1,11 @@
+<VirtualHost *:80>
+    ServerAdmin webmaster@localhost
+    DocumentRoot /opt/ruby-on-rails/deploy/testapp/public
+    RailsEnv development
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+    <Directory "/opt/ruby-on-rails/deploy/testapp/public">
+        Options FollowSymLinks
+        Require all granted
+    </Directory>
+</VirtualHost>
